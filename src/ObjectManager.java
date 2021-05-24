@@ -27,6 +27,13 @@ void update() {
 			a.isActive = false;
 		}
 	}
+		for (int h = 0; h < projectiles.size(); h++) {
+			Projectile t = projectiles.get(h);
+			t.update();
+			if(t.y < 0 ) {
+				t.isActive = false;
+	}
+}
 }
 void draw(Graphics g) {
 	r.draw(g);

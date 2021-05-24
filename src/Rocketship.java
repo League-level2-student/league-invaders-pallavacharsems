@@ -34,15 +34,7 @@ public class Rocketship extends GameObject {
 
 	void update() {
 		
-		if (y <= 50) {
-			y = 50;
-		} else if (y >= 700) {
-			y = 700;
-		} else if (x >= 450) {
-			x = 450;
-		} else if (x <= 50) {
-			x = 50;
-		}
+		
 		if (up == true) {
 			y += -speed;
 		}
@@ -57,7 +49,15 @@ public class Rocketship extends GameObject {
 		if (right == true) {
 			x += speed;
 		}
-
+		if (y <= 0) {
+			y = 0;
+		} else if (y >= LeagueInvaders.HEIGHT-90) {
+			y = LeagueInvaders.HEIGHT-90;
+		} if (x >= LeagueInvaders.WIDTH-65) {
+			x = LeagueInvaders.WIDTH-65;
+		} else if (x <= 0) {
+			x = 0;
+		}
 
 	}
 	void loadImage(String imageFile) {

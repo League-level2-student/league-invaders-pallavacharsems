@@ -109,8 +109,19 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		        currentState = MENU;
 		    } else {
 		        currentState++;
+		      
+		    } if (currentState == GAME) {
+		    	startGame();
+		    	
+		    } if (currentState == END) {
+		    	alienspawn.stop();
 		    }
+		  
 		}   
+		 if (e.getKeyCode()==KeyEvent.VK_SPACE) {
+		    	om.addProjectile(rs.getProjectile());
+		    	
+			}
 		if (e.getKeyCode()==KeyEvent.VK_UP) {
 			
 		    rs.up = true;

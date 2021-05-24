@@ -4,7 +4,7 @@ public class LeagueInvaders {
 	GamePanel gpanel;
 	JFrame frame;
 	public static final int WIDTH = 500;
-	public static final int HEIGHT = 750;
+	public static final int HEIGHT = 700;
 	public static void main(String[] args) {
 		new LeagueInvaders().run();
 		LeagueInvaders LI = new LeagueInvaders();
