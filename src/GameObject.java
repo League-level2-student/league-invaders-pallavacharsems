@@ -22,7 +22,4 @@ void update(){
 	
 }
 
-void checkCollision() {
-	
-}
 }

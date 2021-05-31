@@ -8,6 +8,7 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -48,6 +49,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     void updateGameState() {
     	om.update(); 
     	rs.update();
+    	if (rs.isActive ==  false) {
+    		currentState = END;
+    	}
+    	om.score = om.getScore();
+    
     }
     void updateEndState()  {  }
     void drawMenuState(Graphics g) {  
@@ -67,6 +73,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     void drawGameState(Graphics g) {  
     	if (gotImage) {
 			g.drawImage(image,0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT, null);
+			g.setColor(Color.BLUE);
+			g.setFont(tf);
+			g.drawString("Score: " + om.score, 15 ,50 );
 			
 		} else {
 			g.setColor(Color.BLACK);
@@ -107,6 +116,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		if (e.getKeyCode()==KeyEvent.VK_ENTER) {
 		    if (currentState == END) {
 		        currentState = MENU;
+		        
 		    } else {
 		        currentState++;
 		      
